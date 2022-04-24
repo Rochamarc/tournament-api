@@ -2,3 +2,5 @@
 /players/__pycache__/
 /players/migrations/__pycache__/
 /tournament_api/__pycache__/
+/games/__pycache__/
+/games/migrations/__pycache__/
