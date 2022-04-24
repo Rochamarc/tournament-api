@@ -22,6 +22,7 @@ from players import views
 
 router = routers.DefaultRouter()
 router.register(r'players', views.PlayerViewSet)
+router.register(r'clubs', views.ClubViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
