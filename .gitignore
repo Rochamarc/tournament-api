@@ -1,3 +1,4 @@
 /db.sqlite3
 /players/__pycache__/
 /players/migrations/__pycache__/
+/tournament_api/__pycache__/
