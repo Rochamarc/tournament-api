@@ -11,14 +11,22 @@ class PlayerManager(models.Manager):
 class Player(models.Model):
     name = models.CharField('Nome', max_length=200, blank=False)
     nationality = models.CharField('Nacionalidade', max_length=150, blank=False)
-    age = models.IntegerField('Idade')
-    overall = models.IntegerField('Média')
+    age = models.IntegerField('Idade', blank=False)
+    overall = models.IntegerField('Média', blank=False)
     # Isso vai vir como uma foreign key depois eu adiciono current_club 
-    position = models.CharField('Posição', max_length=30)
+    position = models.CharField('Posição', max_length=30, blank=False)
+    
     ''' Os valores abaixo fazem referencia ao total e nao a temporada '''
-    matches = models.IntegerField('Partidas')  
-    goals = models.IntegerField('Gols')
-    assists = models.IntegerField('Assistencias')
+    matches = models.IntegerField('Partidas', default=0)  
+    goals = models.IntegerField('Gols', default=0)  
+    assists = models.IntegerField('Assistencias', default=0)
+
+    created_at = models.DateTimeField(
+        'Criado em', auto_now_add=True
+    )
+    updated_at = models.DateTimeField(
+        'Atualizado em', auto_now=True
+    )
 
     objects = PlayerManager()
 
