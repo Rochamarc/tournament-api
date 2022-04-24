@@ -4,3 +4,5 @@
 /tournament_api/__pycache__/
 /games/__pycache__/
 /games/migrations/__pycache__/
+/clubs/__pycache__/
+/clubs/migrations/__pycache__/

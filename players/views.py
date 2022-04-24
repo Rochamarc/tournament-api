@@ -2,15 +2,8 @@ from rest_framework import viewsets
 from rest_framework import permissions
 
 
-from .models import Club, Player
-from .serializers import PlayerSerializer, ClubSerializer
-
-class ClubViewSet(viewsets.ModelViewSet):
-    '''
-    '''
-
-    queryset = Club.objects.all()
-    serializer_class = ClubSerializer
+from .models import Player
+from .serializers import PlayerSerializer
 
 class PlayerViewSet(viewsets.ModelViewSet):
     '''

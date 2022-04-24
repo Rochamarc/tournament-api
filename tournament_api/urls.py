@@ -17,9 +17,10 @@ from django.contrib import admin
 from django.urls import path, include
 
 from rest_framework import routers
-from games.views import GameViewSet
 
-from players.views import PlayerViewSet, ClubViewSet
+from games.views import GameViewSet
+from players.views import PlayerViewSet
+from clubs.views import ClubViewSet
 
 router = routers.DefaultRouter()
 router.register(r'players', PlayerViewSet)

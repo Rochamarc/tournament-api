@@ -1,7 +1,7 @@
 from tabnanny import verbose
 from django.db import models
 
-from players.models import Club
+from clubs.models import Club
 
 
 class Game(models.Model):
