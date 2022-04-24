@@ -5,7 +5,6 @@ from rest_framework import permissions
 from .models import Player
 from .serializers import PlayerSerializer
 
-
 class PlayerViewSet(viewsets.ModelViewSet):
     '''
     '''

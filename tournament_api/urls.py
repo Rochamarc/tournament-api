@@ -18,10 +18,14 @@ from django.urls import path, include
 
 from rest_framework import routers
 
-from players import views
+from games.views import GameViewSet
+from players.views import PlayerViewSet
+from clubs.views import ClubViewSet
 
 router = routers.DefaultRouter()
-router.register(r'players', views.PlayerViewSet)
+router.register(r'players', PlayerViewSet)
+router.register(r'clubs', ClubViewSet)
+router.register(r'games', GameViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
