@@ -8,7 +8,8 @@ class Coach(models.Model):
     age = models.IntegerField('Idade', blank=False)
     formation = models.TextField('Formação')
     play_mode = models.TextField('Modo de Jogo')
-    current_club = models.ForeignKey(Club, verbose_name='Clube Atual', blank=True, on_delete=models.CASCADE)
+
+    current_club = models.ForeignKey(Club, verbose_name='Clube Atual', blank=True, on_delete=models.CASCADE, related_name='coach')
 
 
     created_at = models.DateTimeField(
