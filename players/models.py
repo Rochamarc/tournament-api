@@ -16,7 +16,10 @@ class Player(models.Model):
     nationality = models.CharField('Nacionalidade', max_length=150, blank=False)
     age = models.IntegerField('Idade', blank=False)
     overall = models.IntegerField('Média', blank=False)
-    current_club = models.ForeignKey(Club, verbose_name='Clube Atual', blank=True, on_delete=models.CASCADE) 
+    
+    # this is my foreign key
+    current_club = models.ForeignKey(Club, verbose_name='Clube Atual', blank=True, on_delete=models.CASCADE, related_name='players') 
+    
     position = models.CharField('Posição', max_length=30, blank=False)  
     
     ''' Os valores abaixo fazem referencia ao total e nao a temporada '''
