@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'players.apps.PlayersConfig',
     'games.apps.GamesConfig',
     'clubs.apps.ClubsConfig',
-    'coaches.apps.CoachConfig'
+    'coaches.apps.CoachConfig',
+    'trophies.apps.TrophiesConfig'
 ]
 
 MIDDLEWARE = [
@@ -74,12 +75,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'tournament_api.wsgi.application'
 
-
-# Rest Framework
-REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 20
-}
 
 
 # Database
