@@ -18,3 +18,11 @@ class Coach(models.Model):
     updated_at = models.DateTimeField(
         'Atualizado em', auto_now=True
     )
+
+    def __str__(self):
+        return self.name 
+        
+    class Meta:
+        verbose_name = 'Técnico'
+        verbose_name_plural = 'Técnicos'
+        ordering = ['name']
