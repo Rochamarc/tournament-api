@@ -140,3 +140,5 @@ USE_TZ = False
 STATIC_URL = '/static/'
 import django_heroku
 django_heroku.settings(locals())
+
+DATABASES['default']['CONN_MAX_AGE'] = 0
