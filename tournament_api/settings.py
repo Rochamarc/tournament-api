@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'trophies.apps.TrophiesConfig',
     'individual_trophies.apps.IndividualTrophiesConfig',
     'season_individual_player_stats.apps.SeasonIndividualPlayerStatsConfig',
+    'tables.apps.TablesConfig',
 ]
 
 MIDDLEWARE = [
