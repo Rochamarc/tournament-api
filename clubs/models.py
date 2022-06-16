@@ -8,6 +8,10 @@ class Club(models.Model):
     coeff = models.IntegerField('Coeficiente')
     formation = models.CharField('Formação', max_length=10)
 
+    # money
+    total_budget = models.FloatField('Verba Total', default=2_000_000)
+    salary_budget = models.FloatField('Verba de salário', default=500_000)
+
     created_at = models.DateTimeField(
         'Criado em', auto_now_add=True
     )

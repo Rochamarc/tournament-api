@@ -27,6 +27,18 @@ class Player(models.Model):
     goals = models.IntegerField('Gols', default=0)  
     assists = models.IntegerField('Assistencias', default=0)
 
+    # Dinheiro
+    market_value = models.FloatField('Valor de mercado', default=10_000.00)
+    salary = models.FloatField('Salário', default=5_000.00)
+
+    # Quanto as caracteristicas fisicas
+    height = models.FloatField('Altura', default=1.70)
+    weight = models.FloatField('Peso', default=70.00)
+    foot = models.CharField('Pé preferido', max_length=50, default='Right')
+
+    # Quanto a pontos
+    average = models.FloatField('Média', default=0.0)
+
     created_at = models.DateTimeField(
         'Criado em', auto_now_add=True
     )

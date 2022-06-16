@@ -11,6 +11,7 @@ class Coach(models.Model):
 
     current_club = models.ForeignKey(Club, verbose_name='Clube Atual', blank=True, on_delete=models.CASCADE, related_name='coach')
 
+    salary = models.FloatField('Salário', default='5_000.00')
 
     created_at = models.DateTimeField(
         'Criado em', auto_now_add=True

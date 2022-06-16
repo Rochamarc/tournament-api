@@ -42,7 +42,10 @@ INSTALLED_APPS = [
     'games.apps.GamesConfig',
     'clubs.apps.ClubsConfig',
     'coaches.apps.CoachConfig',
-    'trophies.apps.TrophiesConfig'
+    'trophies.apps.TrophiesConfig',
+    'individual_trophies.apps.IndividualTrophiesConfig',
+    'season_individual_player_stats.apps.SeasonIndividualPlayerStatsConfig',
+    'tables.apps.TablesConfig',
 ]
 
 MIDDLEWARE = [
