@@ -9,8 +9,8 @@ class Game(models.Model):
     competition = models.CharField('Competição', max_length=200)
     season = models.CharField('Temporada', max_length=5)
     hour = models.CharField('Horario', max_length=5)
-    home_team = models.ForeignKey(Club, verbose_name='Time Anfitrião', related_name='%(class)s_home', on_delete=models.DO_NOTHING)
-    away_team = models.ForeignKey(Club, verbose_name='Time Visitante', related_name='%(class)s_away', on_delete=models.DO_NOTHING)
+    home_team = models.ForeignKey(Club, verbose_name='Time Anfitrião', related_name='%(class)s_home', on_delete=models.CASCADE)
+    away_team = models.ForeignKey(Club, verbose_name='Time Visitante', related_name='%(class)s_away', on_delete=models.CASCADE)
     score = models.CharField('Placar', max_length=10)
     stadium = models.TextField('Estádio')
 
