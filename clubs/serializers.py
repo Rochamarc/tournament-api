@@ -14,12 +14,12 @@ class TrophiesListing(serializers.ModelSerializer):
 class PlayersListing(serializers.ModelSerializer):
     class Meta:
         model = Player
-        fields = [ 'id', 'name', 'position', 'age', 'nationality', 'overall' ]
+        fields = [ 'id', 'name' ]
 
 class CoachesListing(serializers.ModelSerializer):
     class Meta:
         model = Coach 
-        fields = [ 'id', 'name', 'nationality', 'age', 'formation', 'play_mode' ]
+        fields = [ 'id', 'name' ]
 
 
 class ClubSerializer(serializers.HyperlinkedModelSerializer):
