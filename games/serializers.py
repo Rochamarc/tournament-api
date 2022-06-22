@@ -1,17 +1,29 @@
 from rest_framework import serializers
 
+from clubs.models import Club
+
 from .models import Game
 
+
+class ClubListing(serializers.ModelSerializer):
+    class Meta:
+        model = Club
+        fields = ['id', 'name']
+
 class GameSerializer(serializers.HyperlinkedModelSerializer):
+    
+    home_team = ClubListing(many=False, read_only=False)
+    away_team = ClubListing(many=False, read_only=False)
+
     class Meta:
         model = Game 
         fields = [
             'id',
+            'home_team',
+            'away_team',
             'competition',
             'season',
             'hour',
-            'home_team',
-            'away_team',
             'score',
             'stadium',
             'home_shots',
