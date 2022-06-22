@@ -11,7 +11,7 @@ class ClubListing(serializers.ModelSerializer):
 
 class PlayerSerializer(serializers.HyperlinkedModelSerializer):
 
-    current_club = ClubListing(many=False, read_only=True)
+    current_club = ClubListing(many=False, read_only=False)
 
     class Meta:
         model = Player 
