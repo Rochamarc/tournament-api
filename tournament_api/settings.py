@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'individual_trophies.apps.IndividualTrophiesConfig',
     'season_individual_player_stats.apps.SeasonIndividualPlayerStatsConfig',
     'tables.apps.TablesConfig',
+    'django_filters'
 ]
 
 MIDDLEWARE = [
@@ -78,7 +79,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'tournament_api.wsgi.application'
 
-
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+}
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
