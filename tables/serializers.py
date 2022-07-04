@@ -17,6 +17,9 @@ class TableSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Table 
+        fields = '__all__'
+
+        '''
         fields = [
             'id',
             'season',
@@ -33,3 +36,12 @@ class TableSerializer(serializers.HyperlinkedModelSerializer):
             'created_at', 
             'updated_at' 
             ]
+        '''
+    
+    def create(self, validated_data):
+        data = validated_data.pop('club')
+        club = Club.objects.filter(name=data['name'])[0]
+        validated_data['club'] = club
+        table = Table.objects.create(**validated_data)
+        return table
+

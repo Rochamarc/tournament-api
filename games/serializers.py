@@ -1,3 +1,4 @@
+from logging.config import valid_ident
 from rest_framework import serializers
 
 from clubs.models import Club
@@ -17,31 +18,13 @@ class GameSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Game 
-        fields = [
-            'id',
-            'home_team',
-            'away_team',
-            'competition',
-            'season',
-            'hour',
-            'score',
-            'stadium',
-            'home_shots',
-            'home_shots_on_target',
-            'home_fouls',
-            'home_tackles',
-            'home_saves',
-            'home_ball_possession',
-            'home_offsides',
-            'home_freekicks',
-            'away_shots',
-            'away_shots_on_target',
-            'away_fouls',
-            'away_tackles',
-            'away_saves',
-            'away_ball_possession',
-            'away_offsides',
-            'away_freekicks',
-            'created_at',
-            'updated_at'
-        ]
+        fields = '__all__'
+
+    def create(self, validated_data):
+        home_data, away_data = validated_data.pop('home_team'), validated_data.pop('away_team')
+        home_team, away_team = Club.objects.filter(name=home_data['name'])[0], Club.objects.filter(name=away_data['name'])[0]
+        
+        validated_data['home_team'] = home_team
+        validated_data['away_team'] = away_team
+
+        return Game.objects.create(**validated_data)
