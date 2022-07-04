@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Club(models.Model):
-    name = models.CharField('Nome', max_length=200, blank=False)
+    name = models.CharField('Nome', max_length=200, unique=True, blank=False)
     country = models.CharField('País', max_length=200, blank=False)
     state = models.CharField('Estado', max_length=200, blank=True)
     coeff = models.IntegerField('Coeficiente')
