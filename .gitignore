@@ -1,21 +1,5 @@
 /db.sqlite3
-/players/__pycache__/
-/players/migrations/__pycache__/
-/tournament_api/__pycache__/
-/games/__pycache__/
-/games/migrations/__pycache__/
-/clubs/__pycache__/
-/clubs/migrations/__pycache__/
-/coaches/__pycache__/
-/coaches/migrations/__pycache__/
-/trophies/__pycache__/
-/trophies/migrations/__pycache__/
-/individual_trophies/__pycache__/
-/individual_trophies/migrations/__pycache__/
-/season_individual_player_stats/__pycache__/
-/season_individual_player_stats/migrations/__pycache__/
-/tables/__pycache__/
-/tables/migrations/__pycache__/
+*__pycache__/
 
 # pyenv variables
 .python-version
