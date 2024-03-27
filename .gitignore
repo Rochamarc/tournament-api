@@ -16,3 +16,6 @@
 /season_individual_player_stats/migrations/__pycache__/
 /tables/__pycache__/
 /tables/migrations/__pycache__/
+
+# pyenv variables
+.python-version
