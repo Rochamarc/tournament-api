@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'individual_trophies.apps.IndividualTrophiesConfig',
     'season_individual_player_stats.apps.SeasonIndividualPlayerStatsConfig',
     'tables.apps.TablesConfig',
-    'django_filters'
+    'app.apps.AppConfig',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -88,17 +89,11 @@ REST_FRAMEWORK = {
 
 DATABASES = {
     'default': {
-        
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        
         'NAME': 'tournament_api_db',
-        
         'USER': 'tour_user',
-        
         'PASSWORD': 'tour_db_2021',
-
         'HOST': 'localhost',
-
         'PORT': '5432'
     }
 }
