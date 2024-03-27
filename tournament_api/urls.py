@@ -27,17 +27,25 @@ from individual_trophies.views import IndividualTrophyViewSet
 from season_individual_player_stats.views import SeasonIndividualPlayerStatsViewSet
 from tables.views import TableViewSet
 
+# New imports
+from app.views import ClubViewSet as ClubViewSetV2
+from app.views import PlayerViewSet as PlayerViewSetV2
+
 router = routers.DefaultRouter()
 
 
-router.register(r'players', PlayerViewSet)
-router.register(r'clubs', ClubViewSet)
-router.register(r'games', GameViewSet)
-router.register(r'coaches', CoachViewSet)
-router.register(r'trophies', TrophyViewSet)
-router.register(r'individual_trophies', IndividualTrophyViewSet)
-router.register(r'season_individual_player_stats', SeasonIndividualPlayerStatsViewSet)
-router.register(r'tables', TableViewSet)
+router.register(r'v1/players', PlayerViewSet)
+router.register(r'v1/clubs', ClubViewSet)
+router.register(r'v1/games', GameViewSet)
+router.register(r'v1/coaches', CoachViewSet)
+router.register(r'v1/trophies', TrophyViewSet)
+router.register(r'v1/individual_trophies', IndividualTrophyViewSet)
+router.register(r'v1/season_individual_player_stats', SeasonIndividualPlayerStatsViewSet)
+router.register(r'v1/tables', TableViewSet)
+
+router.register(r'v2/clubs', ClubViewSetV2)
+router.register(r'v2/players', PlayerViewSetV2)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
