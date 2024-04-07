@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Club, Player, Coach
+from .models import Club, Player, Coach, SeasonIndividualPlayerStats, Competitions
 
 class ClubSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -15,4 +15,14 @@ class PlayerSerializer(serializers.HyperlinkedModelSerializer):
 class CoachSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Coach
+        fields = "__all__"
+
+class SeasonIndividualPlayerStatsSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = SeasonIndividualPlayerStats
+        fields = "__all__"
+
+class CompetitionsSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Competitions
         fields = "__all__"

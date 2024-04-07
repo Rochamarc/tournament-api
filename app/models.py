@@ -95,3 +95,40 @@ class Coach(models.Model):
         verbose_name = 'Coach'
         verbose_name_plural = 'Coaches'
         ordering = ['name']
+
+class Competitions(models.Model):
+    name = models.CharField(max_length=200, null=False)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = 'Competition'
+
+class SeasonIndividualPlayerStats(models.Model):
+    season = models.CharField(max_length=4)
+        
+    # club = models.CharField('Clube', max_length=200)
+
+    goals = models.IntegerField(null=False, default=0)
+    assists = models.IntegerField(null=False, default=0)
+    shots_on_target = models.IntegerField(null=False, default=0)
+    saves = models.IntegerField(null=False, default=0)
+    hard_saves = models.IntegerField(null=False, default=0)
+    tackles = models.IntegerField(null=False, default=0)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    # Foreign keys
+    player = models.ForeignKey(Player, verbose_name='player', null=False, related_name='season_individual_player_stats', on_delete=models.CASCADE)
+    club = models.ForeignKey(Club, verbose_name='club', null=False, on_delete=models.CASCADE)
+
+    # competition = models.ForeignKey()
+
+    def __str__(self):
+        # "f"{self.competition} {self.competition} {self.season}"
+        return f"{self.player} {self.season}"
+    
+    class Meta:
+        ordering = ['season']
