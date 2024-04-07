@@ -1,8 +1,8 @@
 from rest_framework import viewsets
 
-from .models import Club, Player, Coach, SeasonIndividualPlayerStats, Competitions
+from .models import Club, Player, Coach, SeasonIndividualPlayerStats, Competitions, Trophy
 from .serializers import ClubSerializer, PlayerSerializer, CoachSerializer, CompetitionsSerializer 
-from .serializers import SeasonIndividualPlayerStatsSerializer
+from .serializers import SeasonIndividualPlayerStatsSerializer, TrophySerializer
 
 class ClubViewSet(viewsets.ModelViewSet):
     queryset = Club.objects.all()
@@ -23,3 +23,7 @@ class SeasonIndividualPlayerStatsViewSet(viewsets.ModelViewSet):
 class CompetitionsViewSet(viewsets.ModelViewSet):
     queryset = Competitions.objects.all()
     serializer_class = CompetitionsSerializer
+
+class TrophyViewSet(viewsets.ModelViewSet):
+    queryset = Trophy.objects.all()
+    serializer_class = TrophySerializer

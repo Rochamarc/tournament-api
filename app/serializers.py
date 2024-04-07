@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Club, Player, Coach, SeasonIndividualPlayerStats, Competitions
+from .models import Club, Player, Coach, SeasonIndividualPlayerStats, Competitions, Trophy
 
 class ClubSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -25,4 +25,9 @@ class SeasonIndividualPlayerStatsSerializer(serializers.HyperlinkedModelSerializ
 class CompetitionsSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Competitions
+        fields = "__all__"
+
+class TrophySerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Trophy
         fields = "__all__"

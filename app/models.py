@@ -133,3 +133,20 @@ class SeasonIndividualPlayerStats(models.Model):
     
     class Meta:
         ordering = ['season']
+
+class Trophy(models.Model):
+    season = models.CharField(max_length=4)
+
+    # Timestamps
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    # Foreign Key
+    club = models.ForeignKey(Club, verbose_name='champion', related_name='trophies', on_delete=models.CASCADE)
+    competition = models.ForeignKey(Competitions, verbose_name='competition', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.competition} {self.season}"
+
+    class Meta:
+        ordering = ['season']

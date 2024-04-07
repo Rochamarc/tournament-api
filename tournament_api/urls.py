@@ -33,6 +33,7 @@ from app.views import PlayerViewSet as PlayerViewSetV2
 from app.views import CoachViewSet as CoachViewSetV2
 from app.views import SeasonIndividualPlayerStatsViewSet as SeasonIndividualPlayerStatsViewSetV2 
 from app.views import CompetitionsViewSet
+from app.views import TrophyViewSet as TrophyViewSetV2
 
 router = routers.DefaultRouter()
 
@@ -51,6 +52,7 @@ router.register(r'v2/players', PlayerViewSetV2)
 router.register(r'v2/coaches', CoachViewSetV2)
 router.register(r'v2/season_individual_player_stats', SeasonIndividualPlayerStatsViewSetV2)
 router.register(r'v2/competitions', CompetitionsViewSet)
+router.register(r'v2/trophy', TrophyViewSetV2)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
