@@ -3,8 +3,6 @@ from django.db import models
 from players.models import Player
 
 class SeasonIndividualPlayerStats(models.Model):
-    ''' Essa classse será altamente atualizada '''
-
     season = models.CharField('Temporada', max_length=5)
     competition = models.CharField('Competição', max_length=100)
 
