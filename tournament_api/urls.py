@@ -27,9 +27,10 @@ from individual_trophies.views import IndividualTrophyViewSet
 from season_individual_player_stats.views import SeasonIndividualPlayerStatsViewSet
 from tables.views import TableViewSet
 
-# New imports
+# Changing versioning
 from app.views import ClubViewSet as ClubViewSetV2
 from app.views import PlayerViewSet as PlayerViewSetV2
+from app.views import CoachViewSet as CoachViewSetV2
 
 router = routers.DefaultRouter()
 
@@ -45,6 +46,7 @@ router.register(r'v1/tables', TableViewSet)
 
 router.register(r'v2/clubs', ClubViewSetV2)
 router.register(r'v2/players', PlayerViewSetV2)
+router.register(r'v2/coaches', CoachViewSetV2)
 
 
 urlpatterns = [

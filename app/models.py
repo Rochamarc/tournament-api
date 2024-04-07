@@ -63,3 +63,35 @@ class Player(models.Model):
         verbose_name = 'Player'
         verbose_name_plural = 'Players'
         ordering =  ['name', 'birth_year']
+
+class Coach(models.Model):
+    name = models.CharField(max_length=200, null=False)
+    nationality = models.CharField(max_length=200, null=False)
+    birth_year = models.CharField(max_length=4, null=False)
+    
+    # formation = models.TextField()
+    
+    # Play mode
+    FormationTypes = models.TextChoices('FormationTypes', '4-3-3 4-4-2 4-2-3-1 3-5-2 3-4-3')
+    preferred_formation = models.CharField(choices = FormationTypes.choices, max_length=10, default='4-3-3', null=False)
+    
+    PlayModeTypes = models.TextChoices('PlayModeTypes', 'Offensive Defensive Counterattack Addaptive')
+    play_mode = models.TextField(choices=PlayModeTypes.choices, max_length=30, null=True)
+
+    # Money
+    # this has to be another model, linking 
+    # salary = models.FloatField(default='5_000.00')
+
+    # timestamps
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    current_club = models.ForeignKey(Club, verbose_name='current club', on_delete=models.CASCADE, related_name='coach', null=True)
+    
+    def __str__(self):
+        return self.name 
+        
+    class Meta:
+        verbose_name = 'Coach'
+        verbose_name_plural = 'Coaches'
+        ordering = ['name']
