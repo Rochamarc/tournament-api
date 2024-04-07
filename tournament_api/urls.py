@@ -18,15 +18,6 @@ from django.urls import path, include
 
 from rest_framework import routers
 
-from games.views import GameViewSet
-from players.views import PlayerViewSet
-from clubs.views import ClubViewSet
-from coaches.views import CoachViewSet
-from trophies.views import TrophyViewSet
-from individual_trophies.views import IndividualTrophyViewSet
-from season_individual_player_stats.views import SeasonIndividualPlayerStatsViewSet
-from tables.views import TableViewSet
-
 # Changing versioning
 from app.views import ClubViewSet as ClubViewSetV2
 from app.views import PlayerViewSet as PlayerViewSetV2
@@ -36,16 +27,6 @@ from app.views import CompetitionsViewSet
 from app.views import TrophyViewSet as TrophyViewSetV2
 
 router = routers.DefaultRouter()
-
-
-router.register(r'v1/players', PlayerViewSet)
-router.register(r'v1/clubs', ClubViewSet)
-router.register(r'v1/games', GameViewSet)
-router.register(r'v1/coaches', CoachViewSet)
-router.register(r'v1/trophies', TrophyViewSet)
-router.register(r'v1/individual_trophies', IndividualTrophyViewSet)
-router.register(r'v1/season_individual_player_stats', SeasonIndividualPlayerStatsViewSet)
-router.register(r'v1/tables', TableViewSet)
 
 router.register(r'v2/clubs', ClubViewSetV2)
 router.register(r'v2/players', PlayerViewSetV2)
