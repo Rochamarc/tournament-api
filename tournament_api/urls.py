@@ -31,7 +31,7 @@ router = routers.DefaultRouter()
 router.register(r'v2/clubs', ClubViewSetV2)
 router.register(r'v2/players', PlayerViewSetV2)
 router.register(r'v2/coaches', CoachViewSetV2)
-router.register(r'v2/season_individual_player_stats', SeasonIndividualPlayerStatsViewSetV2)
+router.register(r'v2/season_player_stats', SeasonIndividualPlayerStatsViewSetV2)
 router.register(r'v2/competitions', CompetitionsViewSet)
 router.register(r'v2/trophy', TrophyViewSetV2)
 
