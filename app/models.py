@@ -102,6 +102,9 @@ class Competitions(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return self.name 
+    
     class Meta:
         verbose_name = 'Competition'
 
@@ -123,12 +126,10 @@ class SeasonIndividualPlayerStats(models.Model):
     # Foreign keys
     player = models.ForeignKey(Player, verbose_name='player', null=False, related_name='season_individual_player_stats', on_delete=models.CASCADE)
     club = models.ForeignKey(Club, verbose_name='club', null=False, on_delete=models.CASCADE)
-
-    # competition = models.ForeignKey()
+    competition = models.ForeignKey(Competitions, verbose_name='competitions', null=True, on_delete=models.CASCADE)
 
     def __str__(self):
-        # "f"{self.competition} {self.competition} {self.season}"
-        return f"{self.player} {self.season}"
+        return f"{self.player} {self.competition} {self.season}"
     
     class Meta:
         ordering = ['season']
