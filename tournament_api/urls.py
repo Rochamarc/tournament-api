@@ -19,21 +19,17 @@ from django.urls import path, include
 from rest_framework import routers
 
 # Changing versioning
-from app.views import ClubViewSet as ClubViewSetV2
-from app.views import PlayerViewSet as PlayerViewSetV2
-from app.views import CoachViewSet as CoachViewSetV2
-from app.views import SeasonIndividualPlayerStatsViewSet as SeasonIndividualPlayerStatsViewSetV2 
-from app.views import CompetitionsViewSet
-from app.views import TrophyViewSet as TrophyViewSetV2
+from app.views import ClubViewSet, CoachViewSet, CompetitionsViewSet, PlayerViewSet 
+from app.views import SeasonIndividualPlayerStatsViewSet, TrophyViewSet 
 
 router = routers.DefaultRouter()
 
-router.register(r'v2/clubs', ClubViewSetV2)
-router.register(r'v2/players', PlayerViewSetV2)
-router.register(r'v2/coaches', CoachViewSetV2)
-router.register(r'v2/season_player_stats', SeasonIndividualPlayerStatsViewSetV2)
-router.register(r'v2/competitions', CompetitionsViewSet)
-router.register(r'v2/trophy', TrophyViewSetV2)
+router.register(r'clubs', ClubViewSet)
+router.register(r'players', PlayerViewSet)
+router.register(r'coaches', CoachViewSet)
+router.register(r'season_player_stats', SeasonIndividualPlayerStatsViewSet)
+router.register(r'competitions', CompetitionsViewSet)
+router.register(r'trophy', TrophyViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
